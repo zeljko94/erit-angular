@@ -1,0 +1,27 @@
+<mat-card class="messages-card">
+    <mat-card-header>
+      <mat-card-title>New messages</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="message-list">
+        <div *ngFor="let message of messages" class="message-item">
+          <div class="message-icon">
+            <mat-icon>mail</mat-icon>
+          </div>
+          <div class="message-content">
+            <div class="message-header">
+              <span class="message-date">{{message.date | date:'dd.MM.yyyy.'}}</span>
+              <span class="message-time">{{message.date | date:'HH:mm'}}</span>
+            </div>
+            <div class="message-sender">{{message.sender}}</div>
+            <div class="message-text">{{message.content}}</div>
+          </div>
+          <div class="message-actions">
+            <button mat-icon-button>
+              <mat-icon>more_vert</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>

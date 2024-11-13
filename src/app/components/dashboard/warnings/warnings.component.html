@@ -1,0 +1,14 @@
+<mat-card class="warnings-card">
+    <mat-card-header>
+      <mat-card-title>Warnings</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="warning-list">
+        <div *ngFor="let warning of warnings" class="warning-item">
+          <mat-icon [class]="warning.type">warning</mat-icon>
+          <span class="date">{{warning.date | date:'dd.MM.yyyy.'}}</span>
+          <span class="message">{{warning.message}}</span>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>

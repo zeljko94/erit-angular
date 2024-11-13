@@ -1,0 +1,43 @@
+.roster-card {
+    flex: 1;
+  }
+  
+  .roster-calendar {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .roster-day {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    background-color: var(--base-color);
+    border-radius: 4px;
+  }
+  
+  .day-header {
+    margin-bottom: 8px;
+  }
+  
+  .day-name {
+    font-weight: bold;
+    display: block;
+  }
+  
+  .shift-indicator {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    
+    &.P {
+      background-color: var(--accent-1);
+    }
+    
+    &.J {
+      background-color: var(--accent-2);
+    }
+    
+    &.N {
+      background-color: var(--accent-3);
+    }
+  }
