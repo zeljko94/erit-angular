@@ -1,0 +1,28 @@
+.header {
+    background-color: var(--primary-color);
+    color: var(--font-color-light);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 64px;
+  }
+  
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .logo {
+    height: 32px;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .username {
+    font-weight: 500;
+  }
