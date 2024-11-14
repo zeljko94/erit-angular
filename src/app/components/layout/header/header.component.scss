@@ -26,3 +26,23 @@
   .username {
     font-weight: 500;
   }
+
+
+
+
+  /* Menu */
+
+  .role-select {
+    margin-right: 16px;
+    color: var(--font-color-light);
+  }
+
+
+  ::ng-deep .mat-mdc-select-arrow {
+    color: var(--font-color-light) !important;
+  }
+
+  ::ng-deep .cdk-overlay-pane:has(.mat-mdc-select-panel) {
+    min-width: fit-content;
+  }
+

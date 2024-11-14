@@ -1,1 +1,76 @@
-<p>dashboard-messages works!</p>
+<div class="card-header">
+  <h3 class="card-title">New messages</h3>
+  <button mat-icon-button class="collapse-button" (click)="toggleCollapse()">
+    <mat-icon [class.rotated]="isCollapsed">expand_more</mat-icon>
+  </button>
+</div>
+
+<div class="card messages-card" [class.collapsed]="isCollapsed">
+  <ul class="messages-list">
+    <li class="messages-list-item">
+      <mat-icon fontIcon="mail" class="mail-icon alert"></mat-icon>
+      
+      <div class="status-icons">
+        <mat-icon fontIcon="logout" class="status-icon small"></mat-icon>
+        <mat-icon fontIcon="login" class="status-icon small"></mat-icon>
+      </div>
+      
+      <div class="datetime-container">
+        <span class="datetime">24.09.2024. 00:00</span>
+        <span class="datetime">24.09.2025. 00:00</span>
+      </div>
+      
+      <div class="message-text">
+        <b>ACC ROMA |</b> Porta lorem mollis aliquam ut porttitor, lacinia quis vel eros donec ac odio tempor orci...
+      </div>
+      
+      <button mat-icon-button class="pin-button">
+        <mat-icon fontIcon="push_pin"></mat-icon>
+      </button>
+    </li>
+
+    <li class="messages-list-item">
+      <mat-icon fontIcon="mail" class="mail-icon success"></mat-icon>
+      
+      <div class="status-icons">
+        <mat-icon fontIcon="logout" class="status-icon small"></mat-icon>
+        <mat-icon fontIcon="login" class="status-icon small"></mat-icon>
+      </div>
+      
+      <div class="datetime-container">
+        <span class="datetime">24.09.2024. 00:00</span>
+        <span class="datetime">24.09.2025. 00:00</span>
+      </div>
+      
+      <div class="message-text">
+        <b>ACC ROMA |</b> Porta lorem mollis aliquam ut porttitor, lacinia quis vel eros donec ac odio tempor orci...
+      </div>
+      
+      <button mat-icon-button class="pin-button">
+        <mat-icon fontIcon="push_pin"></mat-icon>
+      </button>
+    </li>
+
+    <li class="messages-list-item">
+      <mat-icon fontIcon="mail" class="mail-icon success"></mat-icon>
+      
+      <div class="status-icons">
+        <mat-icon fontIcon="logout" class="status-icon small"></mat-icon>
+        <mat-icon fontIcon="login" class="status-icon small"></mat-icon>
+      </div>
+      
+      <div class="datetime-container">
+        <span class="datetime">24.09.2024. 00:00</span>
+        <span class="datetime">24.09.2025. 00:00</span>
+      </div>
+      
+      <div class="message-text">
+        <b>ACC ROMA |</b> Porta lorem mollis aliquam ut porttitor, lacinia quis vel eros donec ac odio tempor orci...
+      </div>
+      
+      <button mat-icon-button class="pin-button">
+        <mat-icon fontIcon="push_pin"></mat-icon>
+      </button>
+    </li>
+  </ul>
+</div>

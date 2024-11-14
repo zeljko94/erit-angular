@@ -1,1 +1,21 @@
-<p>DASHBOARD</p>
+<div class="dashboard-container">
+  <!-- Left Column -->
+  <div class="left-column">
+      <app-dashboard-warnings></app-dashboard-warnings>
+
+      <app-dashboard-messages></app-dashboard-messages>
+
+      <app-dashboard-pinned-messages></app-dashboard-pinned-messages>
+  </div>
+
+  <!-- Right Column -->
+  <div class="right-column">
+    <app-dashboard-roster></app-dashboard-roster>
+
+    <app-dashboard-change-requests-received></app-dashboard-change-requests-received>
+    
+    <app-dashboard-change-requests-sent></app-dashboard-change-requests-sent>
+
+    <app-dashboard-hours></app-dashboard-hours>
+  </div>
+</div>

@@ -6,7 +6,14 @@
       <img src="assets/logo.svg" alt="Logo" class="logo"> -->
     </div>
     <div class="user-info">
-      <span class="username">{{ username }}</span>
+      <span class="username">{{ authService.getName() }} | </span>
+
+      <mat-select class="role-select" placeholder="Select Role" [(value)]="selectedRole">
+        <mat-option class="role-option" *ngFor="let role of roles" [value]="role">
+          {{ role }}
+        </mat-option>
+      </mat-select>
+
       <button mat-icon-button class="notification-button">
         <mat-icon>notifications</mat-icon>
       </button>
