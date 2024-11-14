@@ -1,5 +1,84 @@
-<h3 class="card-title">Pinned Messages</h3>
-<div class="card">
-  <p><span class="icon">📌</span> 24.09.2024 00:00 AIRAC | Important pinned message...</p>
-  <p><span class="icon">📌</span> 24.09.2025 00:00 ACC ROMA | Another pinned message...</p>
+<div class="card-header">
+  <h3 class="card-title">Pinned messages</h3>
+  <button mat-icon-button class="collapse-button" (click)="toggleCollapse()">
+    <mat-icon [class.rotated]="isCollapsed">expand_more</mat-icon>
+  </button>
+</div>
+
+<div class="card messages-card" [class.collapsed]="isCollapsed">
+  <ul class="messages-list">
+    <li class="messages-list-item">
+      <mat-icon fontIcon="mail_outline" class="mail-icon"></mat-icon>
+      
+      <div class="status-icons">
+        <mat-icon fontIcon="logout" class="status-icon small"></mat-icon>
+        <mat-icon fontIcon="login" class="status-icon small"></mat-icon>
+      </div>
+      
+      <div class="datetime-container">
+        <span class="datetime">24.09.2024. 00:00</span>
+        <span class="datetime">24.09.2025. 00:00</span>
+      </div>
+      
+      <div class="message-text">
+        <b>ACC ROMA |</b> Porta lorem mollis aliquam ut porttitor, lacinia quis vel eros donec ac odio tempor orci...
+      </div>
+      
+      <button mat-icon-button class="pin-button">
+        <mat-icon fontIcon="push_pin"></mat-icon>
+      </button>
+    </li>
+
+    <li class="messages-list-item">
+      <mat-icon fontIcon="mail_outline" class="mail-icon"></mat-icon>
+      
+      <div class="status-icons">
+        <mat-icon fontIcon="logout" class="status-icon small"></mat-icon>
+        <mat-icon fontIcon="login" class="status-icon small"></mat-icon>
+      </div>
+      
+      <div class="datetime-container">
+        <span class="datetime">24.09.2024. 00:00</span>
+        <span class="datetime">24.09.2025. 00:00</span>
+      </div>
+      
+      <div class="message-text">
+        <b>ACC ROMA |</b> Porta lorem mollis aliquam ut porttitor, lacinia quis vel eros donec ac odio tempor orci...
+      </div>
+
+      <button mat-icon-button class="question-button">
+        <mat-icon fontIcon="question_mark"></mat-icon>
+      </button>
+      
+      <button mat-icon-button class="pin-button">
+        <mat-icon fontIcon="push_pin"></mat-icon>
+      </button>
+    </li>
+
+    <li class="messages-list-item">
+      <mat-icon fontIcon="mail_outline" class="mail-icon"></mat-icon>
+      
+      <div class="status-icons">
+        <mat-icon fontIcon="logout" class="status-icon small"></mat-icon>
+        <mat-icon fontIcon="login" class="status-icon small"></mat-icon>
+      </div>
+      
+      <div class="datetime-container">
+        <span class="datetime">24.09.2024. 00:00</span>
+        <span class="datetime">24.09.2025. 00:00</span>
+      </div>
+      
+      <div class="message-text">
+        <b>ACC ROMA |</b> Porta lorem mollis aliquam ut porttitor, lacinia quis vel eros donec ac odio tempor orci...
+      </div>
+
+      <button mat-icon-button class="question-button">
+        <mat-icon fontIcon="question_mark"></mat-icon>
+      </button>
+      
+      <button mat-icon-button class="pin-button">
+        <mat-icon fontIcon="push_pin"></mat-icon>
+      </button>
+    </li>
+  </ul>
 </div>

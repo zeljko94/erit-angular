@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard-pinned-messages.component.scss']
 })
 export class DashboardPinnedMessagesComponent {
+  isCollapsed = false;
 
+  toggleCollapse() {
+    this.isCollapsed = !this.isCollapsed;
+  }
 }
