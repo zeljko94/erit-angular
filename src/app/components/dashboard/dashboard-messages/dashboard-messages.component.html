@@ -7,8 +7,9 @@
 
 <div class="card messages-card" [class.collapsed]="isCollapsed">
   <ul class="messages-list">
-    <li class="messages-list-item">
-      <mat-icon fontIcon="mail" class="mail-icon alert"></mat-icon>
+    <!-- Loop through the messages array -->
+    <li class="messages-list-item" *ngFor="let message of messages">
+      <mat-icon [fontIcon]="message.icon" class="mail-icon" [ngClass]="message.status"></mat-icon>
       
       <div class="status-icons">
         <mat-icon fontIcon="logout" class="status-icon small"></mat-icon>
@@ -16,56 +17,12 @@
       </div>
       
       <div class="datetime-container">
-        <span class="datetime">24.09.2024. 00:00</span>
-        <span class="datetime">24.09.2025. 00:00</span>
+        <span class="datetime">{{ message.dateFrom }}</span>
+        <span class="datetime">{{ message.dateTo }}</span>
       </div>
       
       <div class="message-text">
-        <b>ACC ROMA |</b> Porta lorem mollis aliquam ut porttitor, lacinia quis vel eros donec ac odio tempor orci...
-      </div>
-      
-      <button mat-icon-button class="pin-button">
-        <mat-icon fontIcon="push_pin"></mat-icon>
-      </button>
-    </li>
-
-    <li class="messages-list-item">
-      <mat-icon fontIcon="mail" class="mail-icon success"></mat-icon>
-      
-      <div class="status-icons">
-        <mat-icon fontIcon="logout" class="status-icon small"></mat-icon>
-        <mat-icon fontIcon="login" class="status-icon small"></mat-icon>
-      </div>
-      
-      <div class="datetime-container">
-        <span class="datetime">24.09.2024. 00:00</span>
-        <span class="datetime">24.09.2025. 00:00</span>
-      </div>
-      
-      <div class="message-text">
-        <b>ACC ROMA |</b> Porta lorem mollis aliquam ut porttitor, lacinia quis vel eros donec ac odio tempor orci...
-      </div>
-      
-      <button mat-icon-button class="pin-button">
-        <mat-icon fontIcon="push_pin"></mat-icon>
-      </button>
-    </li>
-
-    <li class="messages-list-item">
-      <mat-icon fontIcon="mail" class="mail-icon success"></mat-icon>
-      
-      <div class="status-icons">
-        <mat-icon fontIcon="logout" class="status-icon small"></mat-icon>
-        <mat-icon fontIcon="login" class="status-icon small"></mat-icon>
-      </div>
-      
-      <div class="datetime-container">
-        <span class="datetime">24.09.2024. 00:00</span>
-        <span class="datetime">24.09.2025. 00:00</span>
-      </div>
-      
-      <div class="message-text">
-        <b>ACC ROMA |</b> Porta lorem mollis aliquam ut porttitor, lacinia quis vel eros donec ac odio tempor orci...
+        <b>ACC ROMA |</b> {{ message.message }}
       </div>
       
       <button mat-icon-button class="pin-button">

@@ -1,7 +1,8 @@
 export interface Message {
-    date: string;
-    time: string;
-    sender: string;
-    content: string;
-    isPinned?: boolean;
+    id: number;
+    status: string;
+    dateFrom: string;
+    dateTo: string;
+    message: string;
+    icon: string;
 }

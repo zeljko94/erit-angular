@@ -14,6 +14,7 @@ import { RatingsModule } from './components/ratings/ratings.module';
 import { RosterModule } from './components/roster/roster.module';
 import { WarningsModule } from './components/warnings/warnings.module';
 import { TrainingModule } from './components/training/training.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { TrainingModule } from './components/training/training.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     SharedModule,
     DashboardModule,
     DocumentsModule,
