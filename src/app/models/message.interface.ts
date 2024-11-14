@@ -3,6 +3,7 @@ export interface Message {
     status: string;
     dateFrom: string;
     dateTo: string;
+    messageFrom: string;
     message: string;
     icon: string;
 }

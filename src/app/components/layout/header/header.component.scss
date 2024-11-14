@@ -7,16 +7,6 @@
   height: 64px;
 }
 
-.header-brand {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.logo {
-  height: 32px;
-}
-
 .user-info {
   display: flex;
   align-items: center;
@@ -27,7 +17,6 @@
   font-weight: 500;
 }
 
-/* Role Select */
 .role-select {
   margin-right: 16px;
   color: var(--font-color-light);
@@ -41,26 +30,98 @@
   min-width: fit-content;
 }
 
-/* Icon Styling */
-.notification-icon mat-icon,
-.user-icon mat-icon {
-  color: white; /* Set icon color to white */
-  font-size: 24px; /* Adjust icon size if needed */
-}
 
-.notification-icon:hover,
-.user-icon:hover {
-  background-color: transparent; /* Remove background on hover */
-  cursor: pointer; /* Add pointer cursor for usability */
-}
 
 .notification-icon,
 .user-icon {
-  background: none; /* Remove button background */
-  border: none; /* Remove button border */
-  padding: 0; /* Remove padding */
+  background: none;
+  border: none;
+  padding: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
-  cursor: pointer; /* Make sure the icons are clickable */
+  cursor: pointer;
+}
+
+.notification-icon mat-icon,
+.user-icon mat-icon {
+  color: white;
+  font-size: 24px;
+}
+
+.notifications-menu {
+  width: 250px;
+  padding: 8px 0;
+  background-color: var(--base-color-blue);
+  color: #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.notification-header {
+  font-weight: bold;
+  font-size: 16px;
+  color: #1d4e89;
+  padding: 8px 16px;
+  border-bottom: 1px solid #d1d5da;
+}
+
+.notification-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-bottom: 1px solid #e0e6ed;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-icon {
+  font-size: 20px;
+  color: #3a4b5c;
+  margin-right: 12px;
+}
+
+.notification-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-title {
+  font-weight: 500;
+  color: #333;
+}
+
+.notification-time {
+  font-size: 12px;
+  color: #888;
+}
+
+.notification-section {
+  font-size: 14px;
+  color: #555;
+  margin: 12px 16px 4px;
+}
+
+.user-menu {
+  width: 200px;
+  padding: 8px 0;
+  background-color: #f0f4fa;
+  color: var(--base-color-blue);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.user-menu button.mat-menu-item {
+  font-size: 14px;
+  color: red;
+  padding: 8px 16px;
+}
+
+.user-menu-list-item {
+  color: var(--font-color-dark);
+}
+
+.user-menu button.mat-menu-item:hover {
+  background-color: #dce6f2;
 }

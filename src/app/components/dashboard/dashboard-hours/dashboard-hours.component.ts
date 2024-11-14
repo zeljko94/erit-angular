@@ -8,7 +8,7 @@ import { Hours } from 'src/app/models/hours.interface';
   styleUrls: ['./dashboard-hours.component.scss']
 })
 export class DashboardHoursComponent implements OnInit {
-
+  isCollapsed = false;
   changeRequests: Hours[] = [];
 
   constructor(private hoursService: HoursService) { }
@@ -26,5 +26,10 @@ export class DashboardHoursComponent implements OnInit {
         console.error('Error loading hours data', error);
       }
     );
+  }
+
+
+  toggleCollapse(): void {
+    this.isCollapsed = !this.isCollapsed;
   }
 }

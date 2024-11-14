@@ -1,35 +1,56 @@
 <mat-toolbar class="header">
   <div class="header-brand">
-    <!-- <button mat-icon-button class="menu-button">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <img src="assets/logo.svg" alt="Logo" class="logo"> -->
+    <!-- Header brand or logo (commented out in your code) -->
   </div>
   <div class="user-info">
     <span class="username">{{ authService.getName() }} | </span>
 
+    <!-- Role Select -->
     <mat-select class="role-select" placeholder="Select Role" [(value)]="selectedRole">
       <mat-option class="role-option" *ngFor="let role of roles" [value]="role">
         {{ role }}
       </mat-option>
     </mat-select>
 
-    <!-- Notification Icon with Menu -->
+    <!-- Notifications Dropdown -->
     <button [matMenuTriggerFor]="notificationsMenu" class="notification-icon">
       <mat-icon>notifications</mat-icon>
     </button>
-    <mat-menu #notificationsMenu="matMenu">
-      <button mat-menu-item *ngFor="let notification of notifications">{{ notification }}</button>
+    <mat-menu #notificationsMenu="matMenu" class="notifications-menu">
+      <div class="notification-header">User Notifications</div>
+      <div class="notification-item" *ngFor="let notification of notifications">
+        <mat-icon class="notification-icon">{{ notification.icon }}</mat-icon>
+        <div class="notification-content">
+          <span class="notification-title">{{ notification.title }}</span>
+          <span class="notification-time">{{ notification.time }}</span>
+        </div>
+      </div>
+      <div class="notification-section">Earlier</div>
+      <!-- Add more items here for the "Earlier" section -->
     </mat-menu>
 
-    <!-- User Icon with Menu -->
+    <!-- User Info Dropdown -->
     <button [matMenuTriggerFor]="userMenu" class="user-icon">
-      <mat-icon>person</mat-icon>
+      <mat-icon class="user-menu-list-item">person</mat-icon>
     </button>
-    <mat-menu #userMenu="matMenu">
-      <button mat-menu-item>Profile</button>
-      <button mat-menu-item>Settings</button>
-      <button mat-menu-item>Logout</button>
+    <mat-menu #userMenu="matMenu" class="user-menu">
+      <button mat-menu-item class="user-menu-list-item">
+        <mat-icon class="user-menu-list-item">person</mat-icon>
+        Personal Info
+      </button>
+      <button mat-menu-item class="user-menu-list-item">
+        <mat-icon class="user-menu-list-item">folder</mat-icon>
+        Personal Files
+      </button>
+      <button mat-menu-item class="user-menu-list-item">
+        <mat-icon class="user-menu-list-item">settings</mat-icon>
+        Profile Settings
+      </button>
+      <button mat-menu-item class="user-menu-list-item">
+        <mat-icon class="user-menu-list-item">logout</mat-icon>
+        Logout
+      </button>
     </mat-menu>
+    
   </div>
 </mat-toolbar>

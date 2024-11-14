@@ -3,5 +3,6 @@ export interface PinnedMessage {
     status: string[];         
     datetime: string[];        
     text: string;              
-    buttons: string[];        
+    buttons: string[];
+    messageFrom: string;        
   }

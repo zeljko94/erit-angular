@@ -1,9 +1,11 @@
 <h3 class="card-title">Roster</h3>
-<div class="card roster">
-  <div *ngFor="let item of roster" [ngClass]="{'roster-item': true, 'active': item.active}">
-    <span class="day">{{ item.day }}</span>
-    <span class="shift">{{ item.shift }}</span>
-    <span *ngIf="item.location" class="location">{{ item.location }}</span>
-    <mat-icon *ngIf="item.icon" class="icon">{{ item.icon }}</mat-icon>
+<div class="roster-container">
+  <div class="card roster">
+    <div *ngFor="let item of roster" [ngClass]="{'roster-item': true, 'active': item.active}">
+      <span class="day">{{ item.day }}</span>
+      <span class="shift">{{ item.shift }}</span>
+      <span *ngIf="item.location" class="location">{{ item.location }}</span>
+      <mat-icon *ngIf="item.icon" class="icon">{{ item.icon }}</mat-icon>
+    </div>
   </div>
 </div>

@@ -24,6 +24,9 @@
               <ng-container *ngIf="request.status === 'rejected'">
                 <span class="cross">✕</span>
               </ng-container>
+              <ng-container *ngIf="request.status === 'approved'">
+                <span class="success"><mat-icon fontIcon="checkmark"></mat-icon></span>
+              </ng-container>
             </div>
           </td>
         </tr>
