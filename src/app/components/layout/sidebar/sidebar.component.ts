@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
+  @Input() isMobile = false;
+  
   menuItems = [
     { icon: 'dashboard', label: 'Dashboard', route: '/dashboard' },
     { icon: 'folder', label: 'Documents', route: '/documents' },
@@ -13,7 +15,7 @@ export class SidebarComponent {
     { icon: 'message', label: 'Messages', route: '/messages' },
     { icon: 'schedule', label: 'Hours', route: '/hours' },
     { icon: 'check_circle', label: 'Ratings', route: '/ratings' },
-    { icon: 'training', label: 'Training', route: '/training' },
+    { icon: 'school', label: 'Training', route: '/training' },
     { icon: 'warning', label: 'Warnings', route: '/warnings' },
   ];
 }

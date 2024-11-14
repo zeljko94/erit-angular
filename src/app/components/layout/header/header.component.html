@@ -1,24 +1,35 @@
 <mat-toolbar class="header">
-    <div class="header-brand">
-      <!-- <button mat-icon-button class="menu-button">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <img src="assets/logo.svg" alt="Logo" class="logo"> -->
-    </div>
-    <div class="user-info">
-      <span class="username">{{ authService.getName() }} | </span>
+  <div class="header-brand">
+    <!-- <button mat-icon-button class="menu-button">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img src="assets/logo.svg" alt="Logo" class="logo"> -->
+  </div>
+  <div class="user-info">
+    <span class="username">{{ authService.getName() }} | </span>
 
-      <mat-select class="role-select" placeholder="Select Role" [(value)]="selectedRole">
-        <mat-option class="role-option" *ngFor="let role of roles" [value]="role">
-          {{ role }}
-        </mat-option>
-      </mat-select>
+    <mat-select class="role-select" placeholder="Select Role" [(value)]="selectedRole">
+      <mat-option class="role-option" *ngFor="let role of roles" [value]="role">
+        {{ role }}
+      </mat-option>
+    </mat-select>
 
-      <button mat-icon-button class="notification-button">
-        <mat-icon>notifications</mat-icon>
-      </button>
-      <button mat-icon-button class="user-button">
-        <mat-icon>person</mat-icon>
-      </button>
-    </div>
+    <!-- Notification Icon with Menu -->
+    <button [matMenuTriggerFor]="notificationsMenu" class="notification-icon">
+      <mat-icon>notifications</mat-icon>
+    </button>
+    <mat-menu #notificationsMenu="matMenu">
+      <button mat-menu-item *ngFor="let notification of notifications">{{ notification }}</button>
+    </mat-menu>
+
+    <!-- User Icon with Menu -->
+    <button [matMenuTriggerFor]="userMenu" class="user-icon">
+      <mat-icon>person</mat-icon>
+    </button>
+    <mat-menu #userMenu="matMenu">
+      <button mat-menu-item>Profile</button>
+      <button mat-menu-item>Settings</button>
+      <button mat-menu-item>Logout</button>
+    </mat-menu>
+  </div>
 </mat-toolbar>

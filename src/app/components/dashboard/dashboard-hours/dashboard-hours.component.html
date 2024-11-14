@@ -1,10 +1,29 @@
-<h3 class="card-title">Hours</h3>
-<div class="card table-card">
-  <div class="table-row header">
-    <span>License Unit</span><span>Role</span><span>Last Work</span><span>Period</span><span>Hours</span>
+<h2 class="card-title">Hours</h2>
+<div class="card">
+  <div class="card-content">
+    <table>
+      <thead>
+        <tr>
+          <th class="with-separator">LICENSE_UNIT</th>
+          <th class="with-separator">ROLE</th>
+          <th class="with-separator">LAST WORK</th>
+          <th class="with-separator">PERIOD</th>
+          <th class="with-separator">HOURS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of changeRequests; let i = index">
+          <td class="center-align with-separator">{{ request.licenseUnit }}</td>
+          <td class="center-align with-separator">{{ request.role }}</td>
+          <td class="center-align with-separator alert">
+            <span [ngClass]="i > 0 ? 'warning' : 'alert'">{{ request.lastWork }}</span>
+          </td>
+          <td class="center-align with-separator">{{ request.period }}</td>
+          <td class="center-align with-separator">
+            <span [ngClass]="i == 0 ? 'alert' : ''">{{ request.hours }}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <div class="table-row">
-    <span>ACS_LDZO</span><span>ACC</span><span>14.09.2024</span><span>02.09. - 01.12.</span><span>27:32</span>
-  </div>
-  <!-- Additional rows as needed -->
 </div>

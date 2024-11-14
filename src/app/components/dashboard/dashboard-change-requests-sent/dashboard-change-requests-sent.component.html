@@ -1,10 +1,33 @@
-<h3 class="card-title">Change Requests | SENT</h3>
-<div class="card table-card">
-  <div class="table-row header">
-    <span>Roster</span><span>Date</span><span>Shift</span><span>Sent To</span><span>Status</span>
+<h2 class="card-title">Change requests | SENT</h2>
+<div class="card">
+  <div class="card-content">
+    <table>
+      <thead>
+        <tr>
+          <th class="with-separator">ROSTER</th>
+          <th class="with-separator">DATE</th>
+          <th class="with-separator">SHIFT</th>
+          <th class="with-separator">SENDER</th>
+          <th>STATUS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of changeRequests">
+          <td class="center-align with-separator">{{ request.roster }}</td>
+          <td class="center-align with-separator">{{ request.date }}</td>
+          <td class="center-align with-separator">{{ request.shift }}</td>
+          <td class="center-align with-separator">{{ request.sender }}</td>
+          <td>
+            <div class="status-icons" [ngClass]="request.status">
+              <span class="circle"></span>
+              <span class="circle"></span>
+              <ng-container *ngIf="request.status === 'rejected'">
+                <span class="cross">✕</span>
+              </ng-container>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <div class="table-row">
-    <span>LDZO ACS</span><span>19.09.24</span><span>N → P</span><span>Marko Marić</span><span>✔️</span>
-  </div>
-  <!-- Additional rows as needed -->
 </div>

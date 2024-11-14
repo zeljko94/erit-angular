@@ -1,48 +1,66 @@
 .header {
-    background-color: var(--primary-color);
-    color: var(--font-color-light);
-    display: flex;
-    justify-content: space-between;
-    padding: 0 16px;
-    height: 64px;
-  }
-  
-  .header-brand {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  
-  .logo {
-    height: 32px;
-  }
-  
-  .user-info {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  
-  .username {
-    font-weight: 500;
-  }
+  background-color: var(--primary-color);
+  color: var(--font-color-light);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  height: 64px;
+}
 
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 
+.logo {
+  height: 32px;
+}
 
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 
-  /* Menu */
+.username {
+  font-weight: 500;
+}
 
-  .role-select {
-    margin-right: 16px;
-    color: var(--font-color-light);
-  }
+/* Role Select */
+.role-select {
+  margin-right: 16px;
+  color: var(--font-color-light);
+}
 
+::ng-deep .mat-mdc-select-arrow {
+  color: var(--font-color-light) !important;
+}
 
-  ::ng-deep .mat-mdc-select-arrow {
-    color: var(--font-color-light) !important;
-  }
+::ng-deep .cdk-overlay-pane:has(.mat-mdc-select-panel) {
+  min-width: fit-content;
+}
 
-  ::ng-deep .cdk-overlay-pane:has(.mat-mdc-select-panel) {
-    min-width: fit-content;
-  }
+/* Icon Styling */
+.notification-icon mat-icon,
+.user-icon mat-icon {
+  color: white; /* Set icon color to white */
+  font-size: 24px; /* Adjust icon size if needed */
+}
 
+.notification-icon:hover,
+.user-icon:hover {
+  background-color: transparent; /* Remove background on hover */
+  cursor: pointer; /* Add pointer cursor for usability */
+}
+
+.notification-icon,
+.user-icon {
+  background: none; /* Remove button background */
+  border: none; /* Remove button border */
+  padding: 0; /* Remove padding */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer; /* Make sure the icons are clickable */
+}

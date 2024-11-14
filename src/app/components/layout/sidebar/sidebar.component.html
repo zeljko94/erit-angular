@@ -1,8 +1,9 @@
-<div class="sidebar">
+<div class="sidebar" [ngStyle]="!isMobile ? {'padding-top': '50px'} : {}">
+  <div *ngIf="isMobile" style="height: 10px;"></div>
   <mat-nav-list>
     <mat-list-item *ngFor="let item of menuItems" [routerLink]="item.route" routerLinkActive="active">
-      <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
-      <span matListItemTitle class="mat-mdc-list-item">{{item.label}}</span>
+      <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+      <span *ngIf="!isMobile" matListItemTitle class="mat-mdc-list-item">{{ item.label }}</span>
     </mat-list-item>
   </mat-nav-list>
 </div>

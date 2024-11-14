@@ -6,6 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { SidebarComponent } from '../components/layout/sidebar/sidebar.component';
 import { HeaderComponent } from '../components/layout/header/header.component';
@@ -24,6 +25,7 @@ import { RouterModule } from '@angular/router';
     MatIconModule,
     MatListModule,
     MatSelectModule,
+    MatMenuModule,
     RouterModule
   ],
   exports: [

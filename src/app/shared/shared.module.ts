@@ -10,6 +10,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list'; 
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
+import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
 
 
@@ -27,6 +28,7 @@ import { RouterModule } from '@angular/router';
     MatGridListModule,
     MatTableModule,
     MatSelectModule,
+    MatMenuModule,
     RouterModule
   ],
   exports: [
@@ -40,6 +42,7 @@ import { RouterModule } from '@angular/router';
     MatGridListModule,
     MatTableModule,
     MatSelectModule,
+    MatMenuModule,
     RouterModule
   ]
 })
