@@ -18,15 +18,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let request of changeRequests; let i = index">
-          <td class="center-align with-separator">{{ request.licenseUnit }}</td>
-          <td class="center-align with-separator">{{ request.role }}</td>
+        <tr *ngFor="let hour of hours; let i = index">
+          <td class="center-align with-separator">{{ hour.licenseUnit }}</td>
+          <td class="center-align with-separator">{{ hour.role }}</td>
           <td class="center-align with-separator alert">
-            <span [ngClass]="i > 0 ? 'warning' : 'alert'">{{ request.lastWork }}</span>
+            <span [ngClass]="i > 0 ? 'warning' : 'alert'">{{ hour.lastWork }}</span>
           </td>
-          <td class="center-align with-separator">{{ request.period }}</td>
+          <td class="center-align with-separator">{{ hour.period }}</td>
           <td class="center-align">
-            <span [ngClass]="i == 0 ? 'alert' : ''">{{ request.hours }}</span>
+            <span [ngClass]="i == 0 ? 'alert' : ''">{{ hour.hours }}</span>
           </td>
         </tr>
       </tbody>

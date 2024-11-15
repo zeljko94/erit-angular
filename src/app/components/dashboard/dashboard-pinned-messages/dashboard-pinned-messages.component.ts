@@ -14,9 +14,7 @@ export class DashboardPinnedMessagesComponent implements OnInit {
   constructor(private messageService: MessagesService) {}
 
   ngOnInit(): void {
-    this.messageService.getPinnedMessages().subscribe((data) => {
-      this.messages = data;
-    });
+    this.messages = this.messageService.getPinnedMessages();
   }
 
   toggleCollapse() {

@@ -1,17 +1,21 @@
 <div class="layout-container">
   <!-- Sidebar Component -->
   <app-sidebar *ngIf="!isMobile" class="desktop-sidebar"></app-sidebar>
+  
   <!-- Main Content -->
   <div class="main-content">
     <!-- Header Component -->
     <app-header></app-header>
+    
     <!-- Router Outlet for page content -->
     <div class="content">
       <router-outlet></router-outlet>
     </div>
-    <!-- Mobile Bottom Navigation -->
+    
+    <!-- Spacer for Bottom Navigation on Mobile -->
     <div class="mobile-nav-spacer" *ngIf="isMobile"></div>
   </div>
+  
   <!-- Mobile Bottom Navigation Bar -->
   <div *ngIf="isMobile" class="mobile-nav">
     <app-sidebar [isMobile]="true"></app-sidebar>

@@ -1,60 +1,56 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { of } from 'rxjs';
 import { DashboardChangeRequestsReceivedComponent } from './dashboard-change-requests-received.component';
 import { ChangeRequestService } from 'src/app/services/change-request.service';
 import { ChangeRequestReceived } from 'src/app/models/change-request-received';
 
+// Mock service
+class MockChangeRequestService {
+  getChangeRequestsReceived(): ChangeRequestReceived[] {
+    return [
+      { "roster": "LDZO ACS", "date": "19.09.24", "shift": "N --> N2", "sender": "Petar Perić", "status": "pending" },
+      { "roster": "LDZO ACS", "date": "23.09.24", "shift": "J --> P", "sender": "Marko Marić", "status": "pending" }
+    ];
+  }
+}
+
 describe('DashboardChangeRequestsReceivedComponent', () => {
   let component: DashboardChangeRequestsReceivedComponent;
   let fixture: ComponentFixture<DashboardChangeRequestsReceivedComponent>;
-  let changeRequestService: jasmine.SpyObj<ChangeRequestService>;
-
-  const mockChangeRequests: ChangeRequestReceived[] = [
-    { roster: 'Unit A', date: '2024-11-12', shift: 'Developer', sender: 'John Doe', status: 'pending' },
-    { roster: 'Unit B', date: '2024-11-05', shift: 'Manager', sender: 'Jane Smith', status: 'approved' },
-  ];
+  let changeRequestService: ChangeRequestService;
 
   beforeEach(async () => {
-    // Create a mock for ChangeRequestService
-    const changeRequestServiceSpy = jasmine.createSpyObj('ChangeRequestService', ['getChangeRequestsReceived']);
-
     await TestBed.configureTestingModule({
       declarations: [DashboardChangeRequestsReceivedComponent],
       providers: [
-        { provide: ChangeRequestService, useValue: changeRequestServiceSpy }
+        { provide: ChangeRequestService, useClass: MockChangeRequestService }
       ]
     }).compileComponents();
-
-    fixture = TestBed.createComponent(DashboardChangeRequestsReceivedComponent);
-    component = fixture.componentInstance;
-    changeRequestService = TestBed.inject(ChangeRequestService) as jasmine.SpyObj<ChangeRequestService>;
   });
 
-  it('should create', () => {
+  beforeEach(() => {
+    fixture = TestBed.createComponent(DashboardChangeRequestsReceivedComponent);
+    component = fixture.componentInstance;
+    changeRequestService = TestBed.inject(ChangeRequestService);
+    fixture.detectChanges(); // triggers ngOnInit()
+  });
+
+  it('should create the component', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should load change requests on initialization', () => {
-    // Arrange
-    changeRequestService.getChangeRequestsReceived.and.returnValue(of(mockChangeRequests));
+  it('should load change requests on ngOnInit', () => {
+    const mockData: ChangeRequestReceived[] = [
+      { "roster": "LDZO ACS", "date": "19.09.24", "shift": "N --> N2", "sender": "Petar Perić", "status": "pending" },
+      { "roster": "LDZO ACS", "date": "23.09.24", "shift": "J --> P", "sender": "Marko Marić", "status": "pending" }
+    ];
 
-    // Act
-    fixture.detectChanges(); // triggers ngOnInit
+    // Spy on the service method to return the mock data directly
+    spyOn(changeRequestService, 'getChangeRequestsReceived').and.returnValue(mockData);
 
-    // Assert
-    expect(component.changeRequests).toEqual(mockChangeRequests);
-    expect(changeRequestService.getChangeRequestsReceived).toHaveBeenCalled();
-  });
+    // Trigger ngOnInit
+    component.ngOnInit();
 
-  it('should call loadChangeRequests method and update changeRequests', () => {
-    // Arrange
-    changeRequestService.getChangeRequestsReceived.and.returnValue(of(mockChangeRequests));
-
-    // Act
-    component.loadChangeRequests();
-
-    // Assert
-    expect(component.changeRequests).toEqual(mockChangeRequests);
-    expect(changeRequestService.getChangeRequestsReceived).toHaveBeenCalledTimes(1);
+    // Assert that the changeRequests property has been populated correctly
+    expect(component.changeRequests).toEqual(mockData);
   });
 });

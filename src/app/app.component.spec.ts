@@ -1,10 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { DashboardModule } from './components/dashboard/dashboard.module';
+import { LayoutModule } from './shared/layout.module';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
+    imports: [RouterTestingModule, DashboardModule, LayoutModule],
     declarations: [AppComponent]
   }));
 
@@ -12,18 +14,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'erit-projekt'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('erit-projekt');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('erit-projekt app is running!');
   });
 });

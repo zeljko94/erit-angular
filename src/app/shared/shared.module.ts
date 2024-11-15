@@ -6,7 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatListModule } from '@angular/material/list'; 
+import { MatListModule, MatNavList } from '@angular/material/list'; 
 import { MatGridListModule } from '@angular/material/grid-list'; 
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';

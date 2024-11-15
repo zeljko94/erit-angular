@@ -18,13 +18,6 @@ export class DashboardWarningsComponent implements OnInit {
   }
 
   loadWarnings(): void {
-    this.warningService.getWarnings().subscribe(
-      (data: Warning[]) => {
-        this.warnings = data;
-      },
-      (error) => {
-        console.error('Error fetching warnings:', error);
-      }
-    );
+    this.warnings = this.warningService.getWarnings();
   }
 }

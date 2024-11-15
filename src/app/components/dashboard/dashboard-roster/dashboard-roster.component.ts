@@ -14,8 +14,6 @@ export class DashboardRosterComponent implements OnInit {
   constructor(private rosterService: RosterService) {}
 
   ngOnInit(): void {
-    this.rosterService.getRoster().subscribe(data => {
-      this.roster = data;
-    });
+    this.roster = this.rosterService.getRoster();
   }
 }

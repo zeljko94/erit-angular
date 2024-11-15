@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { ChangeRequestReceived } from 'src/app/models/change-request-received';
 
 @Injectable({
@@ -8,16 +6,62 @@ import { ChangeRequestReceived } from 'src/app/models/change-request-received';
 })
 export class ChangeRequestService {
 
-  private changeRequessReceivedApiUrl = 'assets/data/change-requests-received.json';
-  private changeRequessSentApiUrl = 'assets/data/change-requests-sent.json';
+  private changeRequestsReceived: ChangeRequestReceived[] = [
+    {
+      "roster": "LDZO ACS",
+      "date": "19.09.24",
+      "shift": "N --> N2",
+      "sender": "Petar Perić",
+      "status": "pending"
+    },
+    {
+      "roster": "LDZO ACS",
+      "date": "23.09.24",
+      "shift": "J --> P",
+      "sender": "Marko Marić",
+      "status": "pending"
+    },
+    {
+      "roster": "LDZO ACS",
+      "date": "24.09.24",
+      "shift": "P --> J",
+      "sender": "Tomislav Horvat",
+      "status": "rejected"
+    }
+  ];
 
-  constructor(private http: HttpClient) { }
 
-  getChangeRequestsSent(): Observable<ChangeRequestReceived[]> {
-    return this.http.get<ChangeRequestReceived[]>(this.changeRequessReceivedApiUrl);
+  private changeRequetsSent: ChangeRequestReceived[] = [
+    {
+      "roster": "LDZO ACS",
+      "date": "19.09.24",
+      "shift": "N --> N2",
+      "sender": "Petar Perić",
+      "status": "approved"
+    },
+    {
+      "roster": "LDZO ACS",
+      "date": "23.09.24",
+      "shift": "J --> P",
+      "sender": "Marko Marić",
+      "status": "pending"
+    },
+    {
+      "roster": "LDZO ACS",
+      "date": "24.09.24",
+      "shift": "P --> J",
+      "sender": "Tomislav Horvat",
+      "status": "rejected"
+    }
+  ];
+
+  constructor() { }
+
+  getChangeRequestsSent(): ChangeRequestReceived[] {
+    return this.changeRequestsReceived;
   }
 
-  getChangeRequestsReceived(): Observable<ChangeRequestReceived[]> {
-    return this.http.get<ChangeRequestReceived[]>(this.changeRequessSentApiUrl);
+  getChangeRequestsReceived(): ChangeRequestReceived[] {
+    return this.changeRequetsSent;
   }
 }

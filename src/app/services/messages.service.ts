@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { Message } from '../models/message.interface';
 import { PinnedMessage } from '../models/pinned-message.interface';
 
@@ -10,16 +8,70 @@ import { PinnedMessage } from '../models/pinned-message.interface';
 })
 export class MessagesService {
 
-  private messagesApiUrl = 'assets/data/messages.json';
-  private pinnedMessagesApiUrl = 'assets/data/pinned-messages.json';
+  private messages = [
+    {
+      "id": 1,
+      "status": "alert",
+      "dateFrom": "24.09.2024. 00:00",
+      "dateTo": "24.09.2025. 00:00",
+      "messageFrom": "ACC ROMA | ",
+      "message": "Porta lorem mollis aliquam ut porttitor, lacinia quis vel eros donec ac odio tempor orci...",
+      "icon": "mail"
+    },
+    {
+      "id": 2,
+      "status": "success",
+      "dateFrom": "24.09.2024. 00:00",
+      "dateTo": "24.09.2025. 00:00",
+      "messageFrom": "AIRAC |",
+      "message": "Porta lorem mollis aliquam ut porttitor, lacinia quis vel eros donec ac odio tempor orci...",
+      "icon": "mail"
+    },
+    {
+      "id": 3,
+      "status": "success",
+      "dateFrom": "24.09.2024. 00:00",
+      "dateTo": "24.09.2025. 00:00",
+      "messageFrom": "ACC ROMA |",
+      "message": "Porta lorem mollis aliquam ut porttitor, lacinia quis vel eros donec ac odio tempor orci...",
+      "icon": "mail"
+    }
+  ];
 
-  constructor(private http: HttpClient) { }
+  private pinnedMessages = [
+    {
+      "icon": "mail_outline",
+      "status": ["logout", "login"],
+      "datetime": ["24.09.2024. 00:00", "24.09.2025. 00:00"],
+      "messageFrom": "AIRAC |",
+      "text": "Porta lorem mollis aliquam ut porttitor, lacinia quis vel eros donec ac odio tempor orci...",
+      "buttons": ["push_pin"]
+    },
+    {
+      "icon": "mail_outline",
+      "status": ["logout", "login"],
+      "datetime": ["24.09.2024. 00:00", "24.09.2025. 00:00"],
+      "messageFrom": "AIRAC |",
+      "text": "Porta lorem mollis aliquam ut porttitor, lacinia quis vel eros donec ac odio tempor orci...",
+      "buttons": ["question_mark", "push_pin"]
+    },
+    {
+      "icon": "mail_outline",
+      "status": ["logout", "login"],
+      "datetime": ["24.09.2024. 00:00", "24.09.2025. 00:00"],
+      "messageFrom": "ACC ROMA |",
+      "text": "Porta lorem mollis aliquam ut porttitor, lacinia quis vel eros donec ac odio tempor orci...",
+      "buttons": ["question_mark", "push_pin"]
+    }
+  ];
 
-  getMessages(): Observable<Message[]> {
-    return this.http.get<Message[]>(this.messagesApiUrl);
+  constructor() { }
+
+  getMessages(): Message[] {
+    return this.messages;
   }
 
-  getPinnedMessages(): Observable<PinnedMessage[]> {
-    return this.http.get<PinnedMessage[]>(this.pinnedMessagesApiUrl);
+  getPinnedMessages(): PinnedMessage[] {
+    return this.pinnedMessages;
   }
 }

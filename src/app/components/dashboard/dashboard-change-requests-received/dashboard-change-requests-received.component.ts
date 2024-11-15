@@ -18,8 +18,6 @@ export class DashboardChangeRequestsReceivedComponent implements OnInit {
   }
 
   loadChangeRequests(): void {
-    this.changeRequestService.getChangeRequestsReceived().subscribe((data) => {
-      this.changeRequests = data;
-    });
+    this.changeRequests = this.changeRequestService.getChangeRequestsReceived();
   }
 }

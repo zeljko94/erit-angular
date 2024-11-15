@@ -9,7 +9,7 @@ import { Hours } from 'src/app/models/hours.interface';
 })
 export class DashboardHoursComponent implements OnInit {
   isCollapsed = false;
-  changeRequests: Hours[] = [];
+  hours: Hours[] = [];
 
   constructor(private hoursService: HoursService) { }
 
@@ -18,14 +18,7 @@ export class DashboardHoursComponent implements OnInit {
   }
 
   private loadHoursData(): void {
-    this.hoursService.getHoursData().subscribe(
-      (data: Hours[]) => {
-        this.changeRequests = data;
-      },
-      (error) => {
-        console.error('Error loading hours data', error);
-      }
-    );
+    this.hours = this.hoursService.getHoursData();
   }
 
 

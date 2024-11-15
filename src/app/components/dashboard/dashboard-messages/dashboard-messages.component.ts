@@ -19,9 +19,7 @@ export class DashboardMessagesComponent implements OnInit {
   }
 
   loadMessages(): void {
-    this.messagesService.getMessages().subscribe((data: Message[]) => {
-      this.messages = data;
-    });
+    this.messages = this.messagesService.getMessages();
   }
 
   toggleCollapse(): void {
