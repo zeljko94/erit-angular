@@ -1,0 +1,24 @@
+[
+    {
+      "roster": "LDZO ACS",
+      "date": "19.09.24",
+      "shift": "N --> N2",
+      "sender": "Petar Perić",
+      "status": "pending"
+    },
+    {
+      "roster": "LDZO ACS",
+      "date": "23.09.24",
+      "shift": "J --> P",
+      "sender": "Marko Marić",
+      "status": "pending"
+    },
+    {
+      "roster": "LDZO ACS",
+      "date": "24.09.24",
+      "shift": "P --> J",
+      "sender": "Tomislav Horvat",
+      "status": "rejected"
+    }
+  ]
+  
